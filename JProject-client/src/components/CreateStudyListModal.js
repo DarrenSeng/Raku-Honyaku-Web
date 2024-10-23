@@ -14,7 +14,7 @@ export default function CreateStudyListModal({ isOpen, onClose,studyLists, setSt
   const handleCreateStudyList = async (title) => {
     try {
     const uid = localStorage.getItem('uid');
-    const response = await Axios.post(`http://localhost:3001/api/users/studylists/create/${uid}/${title}`);
+    const response = await Axios.post(`https://raku-honyaku-web.onrender.com/api/users/studylists/create/${uid}/${title}`);
     if (response.status === 201) {
         toast.success(`Study list "${title}" created successfully.`);
         setTitle(''); 

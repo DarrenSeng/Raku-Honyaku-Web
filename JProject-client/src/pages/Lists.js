@@ -24,7 +24,7 @@ export default function Lists() {
       }
 
       try {
-        const response = await Axios.get(`http://localhost:3001/api/users/studylists/${uid}`);
+        const response = await Axios.get(`https://raku-honyaku-web.onrender.com/api/users/studylists/${uid}`);
         if (response.data && response.data.length > 0) {
           setStudyLists(response.data);
         } else {
@@ -44,9 +44,9 @@ export default function Lists() {
 
   const handleRemove = async (listTitle, word) => {
     try {
-      await Axios.post(`http://localhost:3001/api/users/studylists/remove/${localStorage.getItem('uid')}/${listTitle}/${word}`);
+      await Axios.post(`https://raku-honyaku-web.onrender.com/api/users/studylists/remove/${localStorage.getItem('uid')}/${listTitle}/${word}`);
       // Re-fetch lists after removal
-      const response = await Axios.get(`http://localhost:3001/api/users/studylists/${localStorage.getItem('uid')}`);
+      const response = await Axios.get(`https://raku-honyaku-web.onrender.com/api/users/studylists/${localStorage.getItem('uid')}`);
       setStudyLists(response.data);
     } catch (error) {
       console.error('Error removing word:', error);
@@ -56,7 +56,7 @@ export default function Lists() {
   const handleDeleteList = async (title) => {
     try {
       const uid = localStorage.getItem('uid');
-      const response = await Axios.post(`http://localhost:3001/api/users/studylists/delete/${uid}/${title}`);
+      const response = await Axios.post(`https://raku-honyaku-web.onrender.com/api/users/studylists/delete/${uid}/${title}`);
       if (response.status === 200) {
         toast.success(`List "${title}" deleted successfully.`);
         setStudyLists(prevLists => prevLists.filter(list => list.title !== title))

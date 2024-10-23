@@ -15,7 +15,7 @@ export default function Options({isOpen,toggleDropdown,word}) {
     const uid = localStorage.getItem('uid');
     setLoading(true);  
     try {
-      const response = await Axios.get(`http://localhost:3001/api/users/studylists/${uid}`);
+      const response = await Axios.get(`https://raku-honyaku-web.onrender.com/api/users/studylists/${uid}`);
       if (response.data && response.data.length > 0) {
         setStudyLists(response.data);
       }
@@ -31,7 +31,7 @@ export default function Options({isOpen,toggleDropdown,word}) {
     const uid = localStorage.getItem('uid');
     console.log(word, "added to", title)
     try {
-        const response = await Axios.post(`http://localhost:3001/api/users/studylists/add/${uid}/${title}/${word}`);
+        const response = await Axios.post(`https://raku-honyaku-web.onrender.com/api/users/studylists/add/${uid}/${title}/${word}`);
         if (response.status === 200) {
             toast.success(`${word} added to "${title}" successfully.`);
             

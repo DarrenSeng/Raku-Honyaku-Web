@@ -18,7 +18,7 @@ export default function PasswordResetForm(){
   const { userId, token } = useParams();
   async function verifyPasswordResetLink() {
     try {
-        const response = await Axios.get(`http://localhost:3001/api/password-reset/${userId}/${token}`);
+        const response = await Axios.get(`https://raku-honyaku-web.onrender.com/api/password-reset/${userId}/${token}`);
     } catch (error) {
         console.error("Error verifying password reset link:", error);
         navigate("/login"); 
@@ -40,7 +40,7 @@ export default function PasswordResetForm(){
         return;
     }
     try {
-        await Axios.post(`http://localhost:3001/api/password-reset/${userId}/${token}`, { password });
+        await Axios.post(`https://raku-honyaku-web.onrender.com/api/password-reset/${userId}/${token}`, { password });
         alert("Password reset successfully");
     } catch (error) {
         alert("Error resetting password");

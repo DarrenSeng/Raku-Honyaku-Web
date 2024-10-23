@@ -15,7 +15,7 @@ export const useSearchResults = (searchQuery) => {
     } else {
       const fetchData = async () => {
         try {
-          const response = await fetch(`http://localhost:3001/api/search`, {
+          const response = await fetch(`https://raku-honyaku-web.onrender.com/api/search`, {
             method: 'POST',
             credentials: 'include',
             headers: {

@@ -10,7 +10,7 @@ const UserPersistance = () => {
     const session = cookies.get('browsingSession')
     const { authUser, setAuthUser } = useContext(AuthContext)
     console.log("authUser", authUser);
-    const isLoginUserURI = `http://localhost:3001/api/auth`
+    const isLoginUserURI = `https://raku-honyaku-web.onrender.com/api/auth`
     useEffect(() => {
         async function fetchUserId() {
             const response = await Axios.get(isLoginUserURI)

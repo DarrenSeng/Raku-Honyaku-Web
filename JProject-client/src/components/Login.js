@@ -39,7 +39,7 @@ export default function Login() {
         const { email, password } = loginState;
         
         try {
-            const response = await fetch(`http://localhost:3001/api/auth`, {
+            const response = await fetch(`https://raku-honyaku-web.onrender.com/api/auth`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: {
@@ -58,9 +58,9 @@ export default function Login() {
 
     const authenticateUser = async () => {
         const { email, password,  } = loginState;
-        console.log(`http://localhost:3001/api/auth`)
+        console.log(`https://raku-honyaku-web.onrender.com/api/auth`)
         try {
-            const response = await fetch(`http://localhost:3001/api/auth`, {
+            const response = await fetch(`https://raku-honyaku-web.onrender.com/api/auth`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: {

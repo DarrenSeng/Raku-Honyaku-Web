@@ -22,7 +22,7 @@ export default function PasswordResetLink(){
     const resetPasswordLink = async() =>{
         const { email} = resetState;
         try {
-            const response = await fetch(`http://localhost:3001/api/password-reset`, {
+            const response = await fetch(`https://raku-honyaku-web.onrender.com/api/password-reset`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: {

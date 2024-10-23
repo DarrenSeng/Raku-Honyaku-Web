@@ -24,7 +24,7 @@ export default function Signup() {
   const createAccount = async () => {
     const { email, password } = signupState;
     try {
-      const response = await fetch(`http://localhost:3001/api/users`, {
+      const response = await fetch(`https://raku-honyaku-web.onrender.com/api/users`, {
         method: 'POST',
         credentials: 'include',
         headers: {
