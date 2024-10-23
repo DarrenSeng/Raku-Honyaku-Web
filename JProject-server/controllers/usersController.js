@@ -49,7 +49,7 @@ const verifyEmail = async (req, res) => {
 
         await token.deleteOne();
 
-        res.status(200).redirect(`${process.env.BASE_URL}/email-verified`);
+        res.status(200).redirect(`${process.env.FRONTEND_URL}/email-verified`);
     } catch (error) {
         console.log(error);
         res.status(500).send({ message: "Internal Server Error" });

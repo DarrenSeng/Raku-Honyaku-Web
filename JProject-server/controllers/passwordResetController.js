@@ -26,7 +26,7 @@ const sendResetLink = async (req, res) => {
                 token: crypto.randomBytes(32).toString("hex"),
             }).save();
         }
-        const url = `${process.env.BASE_URL}/password-reset/${user._id}/${token.token}/`;
+        const url = `${process.env.FRONTEND_URL}/password-reset/${user._id}/${token.token}/`;
         await sendEmail(user.email, "Password Reset", url);
         res.status(200).send({ message: "Password reset link sent to your email" });
     } catch (error) {

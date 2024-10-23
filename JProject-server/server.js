@@ -7,7 +7,7 @@ const db = require('./config/db');
 
 
 require("dotenv").config()
-console.log("process env", process.env.BASE_URL)
+
 const app = express();
 app.use(corsMiddleware);
 const server = http.createServer(app);
