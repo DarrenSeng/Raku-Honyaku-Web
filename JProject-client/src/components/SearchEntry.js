@@ -202,8 +202,8 @@ const SearchEntry = ({ source = "", resultType = "", kanjiForms = "", readings_o
         <div className="entry flex min-w-full">
             {resultType === "kanji" ? (
                 <div className='flex max-w-80'>
-                    <div className='mx-7'>
-                        <p className="text-3xl">{kanjiForms}</p>
+                    <div className='mx-5'>
+                        <p className="text-2xl">{kanjiForms}</p>
                     </div>
                     <div className='text-left text-base'>
                         <p>On readings: {readings_on.join(', ')}</p>

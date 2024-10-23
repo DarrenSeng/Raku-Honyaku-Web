@@ -26,7 +26,7 @@ export default function SearchPage(){
             <div className="py-5 flex-col text-slate-200">
               {kanjiResults.length > 0 && (
                 <div className="flex">
-                  <h2 className="text-3xl">Kanji: </h2>
+                  <h2 className="text-2xl">Kanji: </h2>
                   <div className="flex flex-wrap">
                     {kanjiResults.map((entry,index) => (
                       <div key={index} className="mb-5">
@@ -47,7 +47,7 @@ export default function SearchPage(){
               )}
               {wordResults.length > 0 && (
                 <div >
-                  <h2 className="text-3xl mb-4 text-left">Words</h2>
+                  <h2 className="text-2xl mb-4 text-left">Words</h2>
                   {wordResults.map((entry,index) => (
                     <div key={index} className="mb-5">
                       <SearchEntry
