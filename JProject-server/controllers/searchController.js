@@ -23,7 +23,6 @@ const wordListPath= path.join(__dirname, 'wordlist.txt')
 const wordList = new Set(fs.readFileSync(wordListPath, 'utf-8').split('\n').map(word => word.trim().toLowerCase()));
 
 function isEngWord(word) {
-  console.log("eng word check", wordList.has(word.toLowerCase()))
   return wordList.has(word.toLowerCase())
 }
 
@@ -52,7 +51,6 @@ async function search(query) {
     const containsKanji = /[一-龯]/.test(translatedQuery);
     if (containsKanji) {
       results = await  kanjiBeginning(db, translatedQuery, 50);
-      console.log("contains kanji");
       for (let i = 0; i < translatedQuery.length; i++) {
         const char = translatedQuery[i];
         if (/[一-龯]/.test(char)) { 
