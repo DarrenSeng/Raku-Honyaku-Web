@@ -115,7 +115,7 @@ function SearchTools({isHomePage}) {
                 onClose={() => setIsModalOpen(false)} 
             />
             {!loading && isHomePage && query==='' && wordResults=='' && (
-                <div className="text-center text-slate-200 py-10 w-3/5 self-center mt-20">
+                <div className="text-center text-slate-200 py-10 w-5/5 self-center mt-20">
                 <p className="text-xl">
                     Raku Honyaku is a Japanese-English dictionary that lets you find words and kanji quickly. Currently, Raku Honyaku has a drawing search feature, and more lookup methods will be implemented in the future! In addition to the word and kanji information, you can create custom study lists for various purposes, such as words sharing the same kanji, words you looked up in a specific piece of media, or grouping words under certain themes.
                 </p>
