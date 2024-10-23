@@ -46,7 +46,7 @@ export default function SearchPage(){
                 </div>
               )}
               {wordResults.length > 0 && (
-                <div className = "min-w-max">
+                <div >
                   <h2 className="text-3xl mb-4 text-left">Words</h2>
                   {wordResults.map((entry,index) => (
                     <div key={index} className="mb-5">

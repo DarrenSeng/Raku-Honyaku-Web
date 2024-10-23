@@ -77,7 +77,7 @@ export default function Options({isOpen,toggleDropdown,word}) {
     <div className="relative inline-block text-left" ref = {dropdownRef}>
       <button
         onClick={toggleDropdown}
-        className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+        className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2  rounded min-w-28"
       >
         Add to List
       </button>

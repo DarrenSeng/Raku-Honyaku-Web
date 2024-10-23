@@ -199,7 +199,7 @@ const SearchEntry = ({ source = "", resultType = "", kanjiForms = "", readings_o
     const { isLoggedIn } = useContext(AuthContext);
 
     return (
-        <div className="entry">
+        <div className="entry flex min-w-full">
             {resultType === "kanji" ? (
                 <div className='flex max-w-80'>
                     <div className='mx-7'>
@@ -213,31 +213,35 @@ const SearchEntry = ({ source = "", resultType = "", kanjiForms = "", readings_o
                     </div>
                 </div>
             ) : (
-                <div className = 'min-h-24 flex min-w-full justify-between bg-gray-800 pr-5 py-4 rounded-md'>
-                    <div className="mx-7 text-left w-72">
+                <div className='min-h-24 flex flex-nowrap w-full justify-between bg-gray-800 p-4 rounded-md'>
+                    <div className="flex-grow flex-shrink min-w-[50px] max-w-[200px] mx-7 text-left">
                         {kanjiForms.map((word, index) => (
-                        <p key={index} className="text-3xl">{word}</p>
+                        <p key={index} className="text-2xl break-words">{word}</p>
                         ))}
                         {kanaReadings.map((word, index) => (
-                        <p key={index}  className="text-2xl">{word}</p>
+                        <p key={index} className="text-2xl break-words">{word}</p>
                         ))}
                     </div>
-                    <div className= "text-left text-lg  grow">
-                        <p>Part of Speech:&nbsp; 
+                    <div className="flex-grow flex-shrink min-w-0 text-left text-lg mx-5">
+                        <p>Part of Speech:&nbsp;
                         {partOfSpeech.map((acronym, index) => (
                             <span key={index}>
-                                {partOfSpeechParser(acronym)}
-                                {index < partOfSpeech.length - 1 && ', '}
+                            {partOfSpeechParser(acronym)}
+                            {index < partOfSpeech.length - 1 && ', '}
                             </span>
-                        ))}</p>
-                        <p className = "max-w-5xl">Meaning: {glossDefinitions.join(', ')}</p>
+                        ))}
+                        </p>
+                        <p className="break-words overflow-wrap break-word">Meaning: {glossDefinitions.join(', ')}</p>
                     </div>
-                    {isLoggedIn && source==="searchpage" &&<Options isOpen={isOpen} toggleDropdown={onDropdownToggle} word={kanjiForms[0] || kanaReadings[0]}/>}
-                    {isLoggedIn && source === "listspage" && 
-                    <button onClick={onRemove} className="bg-red-500 h-[50px] text-white self-center px-4 py-2 rounded hover:text-gray-200 hover:bg-red-600">
-                    Remove
-                    </button>}
-                </div>
+                    {isLoggedIn && source === "searchpage" &&
+                        <Options isOpen={isOpen} toggleDropdown={onDropdownToggle} word={kanjiForms[0] || kanaReadings[0]} />
+                    }
+                    {isLoggedIn && source === "listspage" &&
+                        <button onClick={onRemove} className="bg-red-500 h-[50px] text-white self-center px-4 py-2 rounded hover:text-gray-200 hover:bg-red-600">
+                        Remove
+                        </button>
+                    }
+                    </div>
             )}
         </div>
     );
