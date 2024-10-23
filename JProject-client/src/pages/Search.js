@@ -18,7 +18,7 @@ export default function SearchPage(){
     };
     
     return(
-        <div className = "flex flex-col px-72 pt-10" style={{ backgroundColor: "#313131", minHeight: "100vh" }}>
+        <div className = "flex flex-col px-32 pt-10" style={{ backgroundColor: "#313131", minHeight: "100vh" }}>
             <SearchTools/>
             {(kanjiResults === null && wordResults===null) ? (
               <ErrorPage/>
